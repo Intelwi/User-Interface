@@ -10,7 +10,7 @@
 
 //------------------------Menu--------------------------------------
 
- void moje_urzadzenie_zamknij (LCD_PCF8574_HandleTypeDef* lcd, bool isPressed)
+ void moje_urzadzenie_zamknij (LCD_PCF8574_HandleTypeDef* lcd)
  {
 	 LCD_SetLocation(lcd, 0, 1);
 	 LCD_WriteString(lcd, "3. Exit  ");
@@ -18,7 +18,7 @@
 	 /* sth to do */
  }
 
- void moje_urzadzenie_tryb_pracy (LCD_PCF8574_HandleTypeDef* lcd, bool isPressed)
+ void moje_urzadzenie_tryb_pracy (LCD_PCF8574_HandleTypeDef* lcd)
  {
 	 LCD_SetLocation(lcd, 0, 1);
 	 LCD_WriteString(lcd, "2. Mode  ");
@@ -31,11 +31,11 @@
 		 switch( positions % 2)
 		 	 {
 		  	  case 0 :
-		  		  trybPracy.manual(lcd,isPressed);
+		  		  trybPracy.manual(lcd);
 		  		  break;
 
 		  	  case 1 :
-		  		  trybPracy.automat(lcd,isPressed);
+		  		  trybPracy.automat(lcd);
 		  		  break;
 		 	 }
  	 }
@@ -43,7 +43,7 @@
 	 /* sth to do */
  }
 
- void moje_urzadzenie_zaprogram(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed)
+ void moje_urzadzenie_zaprogram(LCD_PCF8574_HandleTypeDef* lcd)
  {
 	 LCD_SetLocation(lcd, 0, 1);
 	 LCD_WriteString(lcd, "1. Program  ");
@@ -63,7 +63,7 @@
 
  //---------------------SubMenu1------------------------------------------------------
 
- void tryb_manual (LCD_PCF8574_HandleTypeDef* lcd, bool isPressed)
+ void tryb_manual (LCD_PCF8574_HandleTypeDef* lcd)
   {
  	 LCD_SetLocation(lcd, 0, 1);
  	 LCD_WriteString(lcd, "1. Manual  ");
@@ -73,7 +73,7 @@
  	 }
   }
 
-  void tryb_automat (LCD_PCF8574_HandleTypeDef* lcd, bool isPressed)
+  void tryb_automat (LCD_PCF8574_HandleTypeDef* lcd)
   {
  	 LCD_SetLocation(lcd, 0, 1);
  	 LCD_WriteString(lcd, "2. Automat  ");

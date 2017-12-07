@@ -147,15 +147,15 @@ int main(void)
 	 	  switch( positions % 4)
 	 	  {
 	 	  case 0 :
-	 		  stm.zaprogram(&lcd,isPressed);
+	 		  stm.zaprogram(&lcd);
 	 	      break;
 
 	 	  case 1 :
-	 		  stm.tryb(&lcd,isPressed);
+	 		  stm.tryb(&lcd);
 	 	      break;
 
 	 	  case 2 :
-	 		  stm.zamknij(&lcd,isPressed);
+	 		  stm.zamknij(&lcd);
 	 	  	  break;
 
 	 	  case 3 :

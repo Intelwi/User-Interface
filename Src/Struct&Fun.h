@@ -13,13 +13,14 @@
 #include "PCF8574-master\\pcf8574.h"
 
 extern volatile uint16_t positions; //licznik enkodera
+extern bool isPressed; //czy guzik wcisniety
 
 //------------------------Menu--------------------------------------
 
 struct menu {
-   void (*zaprogram)(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed);
-   void (*zamknij)(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed);
-   void (*tryb)(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed);
+   void (*zaprogram)(LCD_PCF8574_HandleTypeDef* lcd);
+   void (*zamknij)(LCD_PCF8574_HandleTypeDef* lcd);
+   void (*tryb)(LCD_PCF8574_HandleTypeDef* lcd);
  };
 typedef struct menu menu;
 
@@ -28,8 +29,8 @@ menu stworz (void);
 //---------------------SubMenu1------------------------------------------------------
 
 struct submenu1 {
-   void (*manual)(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed);
-   void (*automat)(LCD_PCF8574_HandleTypeDef* lcd, bool isPressed);
+   void (*manual)(LCD_PCF8574_HandleTypeDef* lcd);
+   void (*automat)(LCD_PCF8574_HandleTypeDef* lcd);
  };
 typedef struct submenu1 submenu1;
 

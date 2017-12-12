@@ -12,6 +12,7 @@
 #include "HD44780-master\\hd44780.h"
 #include "PCF8574-master\\pcf8574.h"
 
+extern volatile uint16_t pulse_count; // Licznik impulsow TRZEBA PODPI¥Æ D8 (A) i D7 (B)
 extern volatile uint16_t positions; //licznik enkodera
 extern bool isPressed; //czy guzik wcisniety
 

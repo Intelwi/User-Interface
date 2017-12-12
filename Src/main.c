@@ -389,7 +389,7 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){//obsluga przycisku
 	 if(GPIO_Pin == LCD_BUTTON_Pin)
 	 {
-		 isPressed = 1;
+		 isPressed = true;
 	 }
 }
 /* USER CODE END 4 */

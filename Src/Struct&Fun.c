@@ -22,12 +22,15 @@
  {
 	 LCD_SetLocation(lcd, 0, 1);
 	 LCD_WriteString(lcd, "2. Mode  ");
-	 isPressed = 0;
 	 submenu1 trybPracy = stworzSubMenu1();
 
 	 if (isPressed)
 	 {
-		 isPressed = 0;
+		 isPressed = false;
+		while(1)
+		{
+			pulse_count = TIM1->CNT; // przepisanie wartosci z rejestru timera
+				 	  positions = pulse_count/4; // zeskalowanie impulsow do liczby stabilnych pozycji walu enkodera
 		 switch( positions % 2)
 		 	 {
 		  	  case 0 :
@@ -38,7 +41,9 @@
 		  		  trybPracy.automat(lcd);
 		  		  break;
 		 	 }
+		}
  	 }
+
 
 	 /* sth to do */
  }

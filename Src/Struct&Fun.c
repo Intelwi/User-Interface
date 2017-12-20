@@ -27,8 +27,7 @@
 	 if (isPressed)
 	 {
 		 isPressed = false;
-		 bool isRunning = true;
-		while(isRunning)
+		while(true)
 		{
 			pulse_count = TIM1->CNT; // przepisanie wartosci z rejestru timera
 			positions = pulse_count/4; // zeskalowanie impulsow do liczby stabilnych pozycji walu enkodera
@@ -47,8 +46,10 @@
 		  		LCD_WriteString(lcd, "3. Exit    ");
 		  		if(isPressed)
 		  		{
-		  			isRunning = false;
 		  			isPressed = false;
+		  			TIM1->CNT = 8;
+		  			return;
+
 		  		}
 		  		break;
 		 	 }

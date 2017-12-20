@@ -71,7 +71,12 @@ static void MX_SPI1_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){//obsluga przycisku
+	 if(GPIO_Pin == LCD_BUTTON_Pin)
+	 {
+		 isPressed = true;
+	 }
+}
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -146,21 +151,21 @@ int main(void)
 
 	 	  switch( positions % 4)
 	 	  {
-	 	  case 0 :
+	 	  case 3 :
 	 		  stm.zaprogram(&lcd);
 	 	      break;
 
-	 	  case 1 :
+	 	  case 2 :
 	 		  stm.tryb(&lcd);
 	 	      break;
 
-	 	  case 2 :
+	 	  case 1 :
 	 		  stm.zamknij(&lcd);
 	 	  	  break;
 
-	 	  case 3 :
+	 	  case 0 :
 	 		  LCD_SetLocation(&lcd, 0, 1);
-	 		  LCD_WriteString(&lcd, "4. Hold  ");
+	 		  LCD_WriteString(&lcd, "4. Hold    ");
 	 	      break;
 	 	  }
   /* USER CODE END WHILE */
@@ -380,18 +385,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(MOTORS_ENABLE_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){//obsluga przycisku
-	 if(GPIO_Pin == LCD_BUTTON_Pin)
-	 {
-		 isPressed = true;
-	 }
-}
+
 /* USER CODE END 4 */
 
 /**

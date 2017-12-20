@@ -10,10 +10,10 @@
 
 //------------------------Menu--------------------------------------
 
- void moje_urzadzenie_zamknij (LCD_PCF8574_HandleTypeDef* lcd)
+ void moje_urzadzenie_zatrzymaj (LCD_PCF8574_HandleTypeDef* lcd)
  {
 	 LCD_SetLocation(lcd, 0, 1);
-	 LCD_WriteString(lcd, "3. Exit   ");
+	 LCD_WriteString(lcd, "3. Hold    ");
 
 	 /* sth to do */
  }
@@ -72,7 +72,7 @@
  {
    menu moje_menu;
    moje_menu.zaprogram = moje_urzadzenie_zaprogram;
-   moje_menu.zamknij = moje_urzadzenie_zamknij;
+   moje_menu.zatrzymaj = moje_urzadzenie_zatrzymaj;
    moje_menu.tryb = moje_urzadzenie_tryb_pracy;
    return moje_menu;
  }

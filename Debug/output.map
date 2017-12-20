@@ -4310,9 +4310,9 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15
                 0x08001f2c       0x2e Src/PCF8574-master/pcf8574.o
                 0x08001f2c                PCF8574_Read
  *fill*         0x08001f5a        0x2 
- .text.moje_urzadzenie_zamknij
+ .text.moje_urzadzenie_zatrzymaj
                 0x08001f5c       0x1c Src/Struct&Fun.o
-                0x08001f5c                moje_urzadzenie_zamknij
+                0x08001f5c                moje_urzadzenie_zatrzymaj
  .text.moje_urzadzenie_zaprogram
                 0x08001f78       0x1c Src/Struct&Fun.o
                 0x08001f78                moje_urzadzenie_zaprogram
@@ -4500,6 +4500,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.15
                 0x08002768       0x54 Src/Struct&Fun.o
  .rodata.str1.4
                 0x080027bc       0x38 Src/main.o
+                                 0x37 (size before relaxing)
                 0x080027f4                . = ALIGN (0x4)
 
 .ARM.extab
@@ -4853,7 +4854,7 @@ OUTPUT(LCD_ENCODER.elf elf32-littlearm)
  .debug_line    0x0000af9b      0x7dd Src/system_stm32f4xx.o
  .debug_line    0x0000b778       0x7f startup/startup_stm32f411xe.o
 
-.debug_str      0x00000000    0x885bb
+.debug_str      0x00000000    0x885bd
  .debug_str     0x00000000    0x83604 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                               0x839c4 (size before relaxing)
  .debug_str     0x00083604      0x3a2 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -4874,15 +4875,15 @@ OUTPUT(LCD_ENCODER.elf elf32-littlearm)
                               0x84d92 (size before relaxing)
  .debug_str     0x00088290       0x2f Src/PCF8574-master/pcf8574.o
                               0x84a6f (size before relaxing)
- .debug_str     0x000882bf      0x136 Src/Struct&Fun.o
-                              0x84c5d (size before relaxing)
- .debug_str     0x000883f5       0x7b Src/main.o
-                              0x8580c (size before relaxing)
- .debug_str     0x00088470       0x28 Src/stm32f4xx_hal_msp.o
+ .debug_str     0x000882bf      0x138 Src/Struct&Fun.o
+                              0x84c61 (size before relaxing)
+ .debug_str     0x000883f7       0x7b Src/main.o
+                              0x8580e (size before relaxing)
+ .debug_str     0x00088472       0x28 Src/stm32f4xx_hal_msp.o
                               0x85286 (size before relaxing)
- .debug_str     0x00088498       0xc9 Src/stm32f4xx_it.o
+ .debug_str     0x0008849a       0xc9 Src/stm32f4xx_it.o
                               0x84529 (size before relaxing)
- .debug_str     0x00088561       0x5a Src/system_stm32f4xx.o
+ .debug_str     0x00088563       0x5a Src/system_stm32f4xx.o
                               0x83063 (size before relaxing)
 
 .comment        0x00000000       0x7f

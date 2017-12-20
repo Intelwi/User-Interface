@@ -20,7 +20,7 @@ extern bool isPressed; //czy guzik wcisniety
 
 struct menu {
    void (*zaprogram)(LCD_PCF8574_HandleTypeDef* lcd);
-   void (*zamknij)(LCD_PCF8574_HandleTypeDef* lcd);
+   void (*zatrzymaj)(LCD_PCF8574_HandleTypeDef* lcd);
    void (*tryb)(LCD_PCF8574_HandleTypeDef* lcd);
  };
 typedef struct menu menu;

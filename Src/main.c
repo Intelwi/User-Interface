@@ -160,12 +160,12 @@ int main(void)
 	 	      break;
 
 	 	  case 1 :
-	 		  stm.zamknij(&lcd);
+	 		  stm.zatrzymaj(&lcd);
 	 	  	  break;
 
 	 	  case 0 :
-	 		  LCD_SetLocation(&lcd, 0, 1);
-	 		  LCD_WriteString(&lcd, "4. Hold    ");
+	 		 LCD_SetLocation(&lcd, 0, 1);
+	 		 LCD_WriteString(&lcd, "4. Exit   ");
 	 	      break;
 	 	  }
   /* USER CODE END WHILE */
